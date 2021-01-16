@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Autumn_level 4" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="Camera2D" type="Camera2D" parent="TileMap"]
+
+[node name="ColorRect" type="ColorRect" parent="TileMap/Camera2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

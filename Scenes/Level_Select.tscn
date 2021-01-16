@@ -1,0 +1,202 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scripts/Level_Button.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Default_Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Fonts/YanoneKaffeesatz-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Autumn_level 3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelTest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player_Select.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TrashMePlease.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Level_Select.gd" type="Script" id=8]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0761905, 0.161905, 0.295238 )
+colors = PoolColorArray( 1, 0.513726, 0, 1, 1, 0, 0, 1, 0.72549, 0.2, 0.831373, 1, 0.338208, 0.756757, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.047619, 0.295238 )
+colors = PoolColorArray( 0.286275, 0.54902, 1, 1, 0.262745, 0.133333, 0.72549, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 3 )
+
+[node name="Level_Select" type="Node2D" groups=[
+"Game",
+]]
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 380.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 68, -56 )
+color = Color( 1, 1, 1, 0.729412 )
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 556, 56, 472, 144, 396, 116, 344, 56, 340, 160, 260, 144, 160, 108, 240, 104, 108, 56, 92, 168, 40, 56, 32, 192, -40, 332, -4, 380, -20, 424, 88, 360, 28, 352, 28, 304, 152, 192, 244, 168, 160, 288, 8, 160, -60, 164, 8, 212, 92, 316, 104, 392, 216, 368, 188, 420, 408, 296, 444, 260, 380, 408, 496, 260, 512, 272, 488, 368, 572, 256, 536, 176 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 72, 52 )
+color = Color( 1, 1, 1, 0.819608 )
+texture = SubResource( 4 )
+polygon = PoolVector2Array( 20, 12, 8, 64, -64, 136, 24, 164, 20, 252, 256, 328, 312, 268, 484, 260, 156, 228, 84, 124, 244, 168, 380, 136, 388, 228, 480, 328, 452, 216, 482.703, 170.474, 568, 232, 526.3, 105.83, 568, 44, 488, 80, 452, -36, 440, 68, 176, 36, 272, -52 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 380.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+margin_left = 180.0
+margin_top = 60.0
+margin_right = 528.0
+margin_bottom = 328.0
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control/GridContainer"]
+margin_right = 58.0
+margin_bottom = 69.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 1 "
+script = ExtResource( 1 )
+Level = ExtResource( 7 )
+
+[node name="Button2" type="Button" parent="Control/GridContainer"]
+margin_left = 62.0
+margin_right = 120.0
+margin_bottom = 69.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 2 "
+script = ExtResource( 1 )
+Level = ExtResource( 4 )
+
+[node name="Button3" type="Button" parent="Control/GridContainer"]
+margin_left = 124.0
+margin_right = 182.0
+margin_bottom = 69.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 3 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button4" type="Button" parent="Control/GridContainer"]
+margin_left = 186.0
+margin_right = 244.0
+margin_bottom = 69.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 4 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button5" type="Button" parent="Control/GridContainer"]
+margin_left = 248.0
+margin_right = 312.0
+margin_bottom = 69.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 5 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button6" type="Button" parent="Control/GridContainer"]
+margin_top = 73.0
+margin_right = 58.0
+margin_bottom = 142.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 6 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button7" type="Button" parent="Control/GridContainer"]
+margin_left = 62.0
+margin_top = 73.0
+margin_right = 120.0
+margin_bottom = 142.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 7 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button8" type="Button" parent="Control/GridContainer"]
+margin_left = 124.0
+margin_top = 73.0
+margin_right = 182.0
+margin_bottom = 142.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 8 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button9" type="Button" parent="Control/GridContainer"]
+margin_left = 186.0
+margin_top = 73.0
+margin_right = 244.0
+margin_bottom = 142.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = " 9 "
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button10" type="Button" parent="Control/GridContainer"]
+margin_left = 248.0
+margin_top = 73.0
+margin_right = 312.0
+margin_bottom = 142.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = "10"
+script = ExtResource( 1 )
+Level = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 220.0
+margin_top = 236.0
+margin_right = 431.0
+margin_bottom = 282.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 6 )
+text = "Character Select "
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Level = ExtResource( 6 )
+[connection signal="pressed" from="Control/GridContainer/Button" to="Control/GridContainer/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button2" to="Control/GridContainer/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button3" to="Control/GridContainer/Button3" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button4" to="Control/GridContainer/Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button5" to="Control/GridContainer/Button5" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button6" to="Control/GridContainer/Button6" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button7" to="Control/GridContainer/Button7" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button8" to="Control/GridContainer/Button8" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button9" to="Control/GridContainer/Button9" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button10" to="Control/GridContainer/Button10" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_Button_pressed"]

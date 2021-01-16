@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/LevelBase.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/PlayerStart.tscn" type="PackedScene" id=2]
+
+[node name="LevelBase" type="Node2D" groups=[
+"Game",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "You will need:
+   Player_Start
+   oGameCamera or CameraFollow
+   Tilemap
+      Make sure you load a tileset from resources!
+      Also! Make sure you have the right cell sizes!"
+}
+
+[node name="PlayerStart" parent="." groups=[
+"Game",
+] instance=ExtResource( 2 )]
+position = Vector2( 320, 184 )
